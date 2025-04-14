@@ -1,4 +1,6 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:17-slim
+
+LABEL version=$APP_VERSION
 
 # Copy from Maven build output
 ARG JAR_FILE

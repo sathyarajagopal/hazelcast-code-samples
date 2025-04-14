@@ -23,9 +23,10 @@
 
         <!-- Latest versions -->        
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
-                <!-- Do not increase minor version without also changing 'the-management-center/Dockerfile' -->
-        <hazelcast.version>4.0</hazelcast.version>
-        <hazelcast-kubernetes.version>2.0.1</hazelcast-kubernetes.version>
+        <docker-maven-plugin.version>0.46.0</docker-maven-plugin.version>
+        <!-- Do not increase minor version without also changing 'the-management-center/Dockerfile' -->
+        <hazelcast.version>5.5.0</hazelcast.version>
+        <hazelcast-kubernetes.version>2.2.3</hazelcast-kubernetes.version>
     </properties>
 
     <modules>
@@ -86,10 +87,18 @@
         </pluginManagement>
         <!-- Define docker plugin for all modules to use, skip per module when not needed -->
         <plugins>
-            <plugin>
+            <!--<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>${dockerfile-maven-plugin.version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>-->
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker-maven-plugin.version}</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>

@@ -24,7 +24,7 @@ spec:
           # Are we in Kubernetes
           - name: K8S
             value: "true"
-          image: "springboot-k8s-hello-world/the-server"
+          image: "springboot-k8s-hello-world/the-server:0.1-SNAPSHOT"
           # Always from local, never from Dockerhub
           imagePullPolicy: Never
           # Url to check every 10 seconds if the container is ok
@@ -79,7 +79,7 @@ spec:
         app: pod-hazelcast-management-center
     spec:
       containers:
-        - image: "springboot-k8s-hello-world/the-management-center"
+        - image: "springboot-k8s-hello-world/the-management-center:0.1-SNAPSHOT"
           # Always from local, never from Dockerhub
           imagePullPolicy: Never
           # Url to check every 10 seconds if the container is ok
@@ -146,7 +146,7 @@ spec:
           # Are we in Kubernetes
           - name: K8S
             value: "true"
-          image: "springboot-k8s-hello-world/the-client"
+          image: "springboot-k8s-hello-world/the-client:0.1-SNAPSHOT"
           # Always from local, never from Dockerhub
           imagePullPolicy: Never
           # Url to check every 10 seconds if the container is ok
